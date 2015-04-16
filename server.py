@@ -40,12 +40,14 @@ from utils import render
 DEFAULT_HOST = u'http://localhost'
 DEFAULT_USERNAME = u'default'
 DEFAULT_PASSWORD = u'default123'
+DEFAULT_DB = u'default'
 
 
 class Server(object):
     
     def __init__(self):
-        self.__db_connections = {u'default': MySQLConnection(DEFAULT_HOST, DEFAULT_USERNAME, DEFAULT_USERNAME)}
+        self.__db_connections = {u'default': MySQLConnection(DEFAULT_HOST, DEFAULT_USERNAME,
+                                                             DEFAULT_PASSWORD, DEFAULT_DB)}
 
     def add_connection(self, user, pwd, host=DEFAULT_HOST, db_name=u'default'):
         assert db_name in self.__db_connections, u'Database %s already exists' % db_name

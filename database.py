@@ -3,9 +3,9 @@ import MySQLdb  # You must install this external package.
 
 class MySQLConnection(object):
 
-    def __init__(self, host, user, pwd):
+    def __init__(self, host, user, pwd, db):
         self.host = host
-        self.__db = MySQLdb.connect(host=host, user=user, pwd=pwd)
+        self.__db = MySQLdb.connect(host=host, user=user, passwd=pwd, db=db)
         self.__cur = self.__db.cursor()
 
     def execute(self, sql, commit=False):
