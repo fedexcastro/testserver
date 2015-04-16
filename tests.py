@@ -1,5 +1,4 @@
 import unittest
-import MySQLdb
 from server import Server
 
 
