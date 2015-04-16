@@ -51,7 +51,7 @@ class Server(object):
 
     def add_connection(self, user, pwd, host=DEFAULT_HOST, db_name=u'default'):
         assert db_name in self.__db_connections, u'Database %s already exists' % db_name
-        self.__db_connections[db_name] = MySQLConnection(host, user, pwd)
+        self.__db_connections[db_name] = MySQLConnection(host, user, pwd, db_name)
 
     def handle_request(self, parameters):
         # the method is part of 
